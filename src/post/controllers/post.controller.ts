@@ -1,7 +1,5 @@
 import {
   Body,
-  CACHE_MANAGER,
-  CacheInterceptor,
   Controller,
   Delete,
   Get,
@@ -15,13 +13,13 @@ import {
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
+import { CACHE_MANAGER, CacheInterceptor } from '@nestjs/cache-manager';
 import {
   CreatePostDto,
   PaginationPostDto,
   UpdatePostDto,
 } from '../dto/post.dto';
 import { PostService } from '../services/post.service';
-import { ExceptionLoggerFilter } from '../../utils/exceptionLogger.filter';
 import { HttpExceptionFilter } from '../../utils/httpException.filter';
 import { AuthGuard } from '@nestjs/passport';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
